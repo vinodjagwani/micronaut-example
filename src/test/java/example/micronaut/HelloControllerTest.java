@@ -11,19 +11,19 @@ import org.junit.jupiter.api.Test;
 
 import javax.inject.Inject;
 
-@MicronautTest // <1>
+@MicronautTest
 public class HelloControllerTest {
 
     @Inject
     @Client("/")
-    RxHttpClient client; // <2>
+    RxHttpClient client;
 
     @Test
     public void testHello() {
-        HttpRequest<String> request = HttpRequest.GET("/hello"); // <3>
+        HttpRequest<String> request = HttpRequest.GET("/micronaut"); 
         String body = client.toBlocking().retrieve(request);
 
         assertNotNull(body);
-        assertEquals("Hello World", body);
+        assertEquals("This is micronaut app", body);
     }
 }
