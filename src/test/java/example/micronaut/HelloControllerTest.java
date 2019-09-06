@@ -20,7 +20,7 @@ public class HelloControllerTest {
 
     @Test
     public void testHello() {
-        HttpRequest<String> request = HttpRequest.GET("/micronaut"); 
+        HttpRequest<String> request = HttpRequest.GET("/micronaut");
         String body = client.toBlocking().retrieve(request);
 
         assertNotNull(body);
